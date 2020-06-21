@@ -6,8 +6,8 @@ RegisterCommand("cam", function(source, args, raw)          -- Camera Man and Bo
     local src = source                                      -- Added 'xPlayer.job.name == 'Journalist' to prevent other jobs from accessing said props.'
     local xPlayer = ESX.GetPlayerFromId(src)
     if xPlayer ~= nil and xPlayer.job.name == 'journalist' then
-        if xPlayer.job.grade == 1 or xPlayer.job.grade == 4 then
-        TriggerClientEvent("Mic:ToggleBMic", src)
+        if xPlayer.job.grade == 1 or xPlayer.job.grade == 4 or xPlayer.job.grade == 3 then
+        TriggerClientEvent("Cam:ToggleCam", src)
         end
     end 
 end)
@@ -16,7 +16,7 @@ RegisterCommand("bmic", function(source, args, raw)         -- Crew Access and B
     local src = source
     local xPlayer = ESX.GetPlayerFromId(src)
     if xPlayer ~= nil and xPlayer.job.name == 'journalist' then
-        if xPlayer.job.grade == 0 or xPlayer.job.grade == 4 then
+        if xPlayer.job.grade == 0 or xPlayer.job.grade == 4 or xPlayer.job.grade == 3 then
         TriggerClientEvent("Mic:ToggleBMic", src)
         end
     end
